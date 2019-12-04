@@ -6,19 +6,12 @@
         <div>
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
-
-        <div>
-            <p>Publicado: 14.06.2014</p>
-            <h2><a href="">Primer Post :O</a></h2>
-            <orderlist>
-              <li> Espero esto sirva xdxd</li>
-              <li> No me acuerdo muchos comandos :c</li>
-        </div>
-
-        <div>
-            <p>Que es esto? help xdxd</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Bueno, es un buen avance creo uwu</p>
-        </div>
+        {% for post in posts %}
+      <div>
+          <p> publicado: {{ post.published_date }}</p>
+          <h2><a href="">{{ post.title }}</a></h2>
+          <p>{{ post.text|linebreaksbr }}</p>
+      </div>
+  {% endfor %}
     </body>
 </html>
